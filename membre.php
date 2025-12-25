@@ -116,11 +116,11 @@
          * @param string représente l'état d'assignation d'un projet à une instance de cette classe
          */
         public function __construct($nom, $email,$telephone, $date_inscription, $assigne){
-            $this->nom_complet = $nom;
-            $this->email = $email;
-            $this->telephone = $telephone;
-            $this->date_inscription = $date;
-            $this->assigne = $assigne;
+            $this->setNom($nom);
+            $this->setEmail($email);
+            $this->setTelephone($telephone);
+            $this->setDateInscription($date_inscription);
+            $this->setAssigne($assigne);
         }
     }
 
