@@ -1,10 +1,9 @@
 <?php
-    class Projet{
+    abstract class Projet{
         private $id_projet;
         private $titre;
         private $date_debut;
         private $date_fin;
-        private $periode;
         private $status;
         private $nbr_sprojets;
         private $id_membre;
@@ -30,12 +29,7 @@
         public function setDateFin($date_fin){
             $this->date_fin = $date_fin;
         }
-        public function getPeriode(){
-            return $this->periode;
-        }
-        public function setPeriode($periode){
-            $this->periode = $periode;
-        }
+       
         public function getStatus(){
             return $this->status;
         }
@@ -52,6 +46,15 @@
             return $this->id_membre;
         }
         public function setIdMembre($id_membre){
+            $this->id_membre = $id_membre;
+        }
+        public function __construct($id_projet = null,$titre, $date_debut, $date_fin, $status, $nbr_sprojets, $id_membre){
+            $this->id_projet = $id_projet;
+            $this->titre = $titre;
+            $this->date_debut = $date_debut;
+            $this->date_fin = $date_fin;
+            $this->status = $status;
+            $this->nbr_sprojets = $nbr_sprojets;
             $this->id_membre = $id_membre;
         }
     }
