@@ -1,17 +1,24 @@
 <?php
     class ProjetLongue extends Projet(){
         private $periode;
-
+        private $budget;
 
          public function getPeriode(){
             return $this->periode;
         }
+        public function getBudget(){
+            return $this->budget;
+        }
+        public function setBudget($budget){
+            $this->budget = $budget;
+        }
         public function setPeriode($periode){
             $this->periode = $periode;
         }
-        public function __construct($id_projet = null,$titre, $date_debut, $date_fin, $status, $nbr_sprojets, $id_membre,$periode){
-            $this->periode = $periode;
-            parent::__construct($id_projet = null,$titre, $date_debut, $date_fin, $status, $nbr_sprojets, $id_membre);
+        public function __construct($id_projet = null,$titre, $date_debut, $date_fin, $status, $nbr_sprojets, $id_membre,$periode, $budget){
+            $this->setPeriode($periode);
+            $this->setBudget($budget);
+            parent::__construct($id_projet = null,$titre, $date_debut, $date_fin, $status, $nbr_sprojets, $id_membre, $type_projet);
         }
         private function calcPeriode(){
             $p = $this->date_debut - $this->date_fin;
